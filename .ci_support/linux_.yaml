@@ -1,18 +1,46 @@
 build_number_decrement:
 - '0'
+- '1000'
+c_compiler:
+- gcc
+- toolchain_c
 channel_sources:
+- conda-forge/label/gcc7,defaults
 - conda-forge,defaults
 channel_targets:
+- conda-forge gcc7
 - conda-forge main
+cxx_compiler:
+- gxx
+- toolchain_cxx
 docker_image:
-- conda/c3i-linux-64
+- condaforge/linux-anvil-comp7
+- condaforge/linux-anvil
+fontconfig:
+- '2.13'
+freetype:
+- 2.9.1
+jpeg:
+- '9'
 libiconv:
 - '1.15'
+libpng:
+- 1.6.35
 pin_run_as_build:
+  fontconfig:
+    max_pin: x
+  freetype:
+    max_pin: x
+  jpeg:
+    max_pin: x
   libiconv:
     max_pin: x.x
+  libpng:
+    max_pin: x.x
 zip_keys:
-- - channel_sources
+- - c_compiler
+  - cxx_compiler
+  - channel_sources
   - channel_targets
   - docker_image
   - build_number_decrement
