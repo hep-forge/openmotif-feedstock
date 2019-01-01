@@ -51,6 +51,12 @@ requirements:
     - xorg-libxmu
     - libiconv
 
+test:
+  commands:
+    - 'test "`uil 2>&1| tr -d ''\n''`" = "Severe: no source file specified"'
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+
 outputs:
   - name: openmotif-dev
     script: install_dev.sh
@@ -63,11 +69,6 @@ outputs:
     requirements:
       - openmotif
 
-test:
-  commands:
-    - 'test "`uil 2>&1| tr -d ''\n''`" = "Severe: no source file specified"'
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://motif.ics.com
