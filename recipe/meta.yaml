@@ -1,6 +1,6 @@
 {% set name = "openmotif" %}
-{% set version = "2.3.7" %}
-{% set sha256 = "8f7aadbb0f42df2093d4690735a2b9a02ea2bf69dfb15ae0a39cae28f1580d14" %}
+{% set version = "2.3.8" %}
+{% set sha256 = "859b723666eeac7df018209d66045c9853b50b4218cecadb794e2359619ebce7" %}
 
 package:
   name: {{ name|lower }}
@@ -10,13 +10,9 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://downloads.sourceforge.net/project/motif/Motif%20{{ version }}%20Source%20Code/motif-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # "Only weak aliases are supported on darwin"
-    # From https://raw.githubusercontent.com/Homebrew/formula-patches/b10858b/openmotif/patch-lib-XmP.h.diff
-    - patch-lib-XmP.h.diff
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
 
 requirements:
