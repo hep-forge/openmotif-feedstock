@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 case `uname` in
     Darwin)
 	export LDFLAGS="$LDFLAGS -Wl,-rpath,$PREFIX/lib -L$PREFIX/lib"
 	;;
     Linux)
-	export LDFLAGS="-L$PREFIX/lib -liconv"
+	export LDFLAGS="$LDFLAGS -L$PREFIX/lib -liconv"
 	;;
 esac
 export CPPFLAGS="$CPPFLAGS -I$PREFIX/include"
