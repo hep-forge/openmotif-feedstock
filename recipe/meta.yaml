@@ -16,18 +16,20 @@ source:
     - patch-lib-XmP.h.diff
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win]
 
 requirements:
   build:
-    - toolchain
     - pkg-config
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - flex
-    - freetype 2.7|2.7.*
-    - fontconfig 2.12.*
-    - libpng >=1.6.28,<1.7
-    - jpeg 9*
+    - freetype
+    - fontconfig
+    - libpng
+    - jpeg
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
@@ -38,16 +40,22 @@ requirements:
     - libiconv
 
   run:
-    - freetype 2.7|2.7.*
-    - fontconfig 2.12.*
-    - libpng >=1.6.28,<1.7
-    - jpeg 9*
+    - freetype
+    - fontconfig
+    - libpng
+    - jpeg
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
     - xorg-libxp
     - xorg-libxmu
     - libiconv
+
+test:
+  commands:
+    - 'test "`uil 2>&1| tr -d ''\n''`" = "Severe: no source file specified"'
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 outputs:
   - name: openmotif-dev
@@ -61,11 +69,6 @@ outputs:
     requirements:
       - openmotif
 
-test:
-  commands:
-    - 'test "`uil 2>&1| tr -d ''\n''`" = "Severe: no source file specified"'
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://motif.ics.com
