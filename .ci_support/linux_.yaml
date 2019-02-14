@@ -1,21 +1,13 @@
-build_number_decrement:
-- '0'
-- '1000'
 c_compiler:
 - gcc
-- toolchain_c
 channel_sources:
-- conda-forge/label/gcc7,defaults
 - conda-forge,defaults
 channel_targets:
-- conda-forge gcc7
 - conda-forge main
 cxx_compiler:
 - gxx
-- toolchain_cxx
 docker_image:
 - condaforge/linux-anvil-comp7
-- condaforge/linux-anvil
 fontconfig:
 - '2.13'
 freetype:
@@ -37,10 +29,3 @@ pin_run_as_build:
     max_pin: x.x
   libpng:
     max_pin: x.x
-zip_keys:
-- - c_compiler
-  - cxx_compiler
-  - channel_sources
-  - channel_targets
-  - docker_image
-  - build_number_decrement
