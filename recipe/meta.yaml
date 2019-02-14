@@ -16,7 +16,7 @@ source:
     - patch-lib-XmP.h.diff
 
 build:
-  number: 1000
+  number: 0
   skip: True  # [win]
 
 requirements:
