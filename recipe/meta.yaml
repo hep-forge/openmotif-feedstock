@@ -10,10 +10,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://downloads.sourceforge.net/project/motif/Motif%20{{ version }}%20Source%20Code/motif-{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # "Only weak aliases are supported on darwin"
-    # From https://raw.githubusercontent.com/Homebrew/formula-patches/b10858b/openmotif/patch-lib-XmP.h.diff
-    - patch-lib-XmP.h.diff
 
 build:
   number: 0
