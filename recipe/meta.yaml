@@ -28,6 +28,7 @@ requirements:
     - freetype
     - fontconfig
     - libpng
+    - zlib
     - libjpeg-turbo
     - xorg-libxt
     - xorg-libxext
@@ -42,7 +43,6 @@ requirements:
     - freetype
     - fontconfig
     - libpng
-    - libjpeg-turbo
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
