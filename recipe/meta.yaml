@@ -11,9 +11,10 @@ package:
   version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://downloads.sourceforge.net/project/motif/Motif%20{{ version }}%20Source%20Code/motif-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  {% if versions.get(version, None) %}
+  sha256: {{ versions.get(version) }}
+  {% endif %}
   patches:
     - 0003_fix_ftbfs_binutils-gold.patch  # [linux]
 
