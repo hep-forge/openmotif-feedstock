@@ -22,3 +22,12 @@ export CPPFLAGS="$CPPFLAGS -I$PREFIX/include"
 make -j${CPU_COUNT} | sed 's|'$PREFIX'|$PREFIX|g'
 make check | sed 's|'$PREFIX'|$PREFIX|g'
 make DESTDIR=`pwd`/install/ install | sed 's|'$PREFIX'|$PREFIX|g'
+
+mkdir -p $PREFIX/bin
+cp -av $SRC_DIR/install/$PREFIX/bin/* $PREFIX/bin
+mkdir -p $PREFIX/lib
+cp -av $SRC_DIR/install/$PREFIX/lib/* $PREFIX/lib
+mkdir -p $PREFIX/include
+cp -a $SRC_DIR/install/$PREFIX/include/* $PREFIX/include
+mkdir -p $PREFIX/lib
+cp -a $SRC_DIR/install/$PREFIX/lib/* $PREFIX/lib

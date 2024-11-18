@@ -1,10 +1,14 @@
-{% set name = "openmotif" %}
-{% set version = "2.3.8" %}
-{% set sha256 = "859b723666eeac7df018209d66045c9853b50b4218cecadb794e2359619ebce7" %}
+{% set versions = {
+    "2.3.8": "859b723666eeac7df018209d66045c9853b50b4218cecadb794e2359619ebce7"
+} %}
+
+{% set version = environ.get('COMMIT_VERSION', None) %}
+{% set version = version or versions.keys()|first %}
+{% set version = version|string %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: {{ environ.get('ANACONDA_PACKAGE', 'openmotif')|string|lower }}
+  version: {{ environ.get('ANACONDA_VERSION', version)|replace("-", ".") }}
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
@@ -12,10 +16,6 @@ source:
   sha256: {{ sha256 }}
   patches:
     - 0003_fix_ftbfs_binutils-gold.patch  # [linux]
-
-build:
-  number: 4
-  skip: True  # [win]
 
 requirements:
   build:
@@ -54,25 +54,6 @@ test:
   commands:
     - 'test "`uil 2>&1| tr -d ''\n''`" = "Severe: no source file specified"'
 
-outputs:
-  - name: openmotif-dev
-    script: install_dev.sh
-    build:
-      run_exports:
-        # clients need `openmotif` when using `openmotif-dev`
-        # ABI compatability looks rather unchanging:
-        # https://abi-laboratory.pro/index.php?view=timeline&l=motif
-        - {{ pin_subpackage('openmotif') }}
-    requirements:
-      # `openmotiv-dev` headers are exactly for same version
-      - {{ pin_subpackage('openmotif', exact=True) }}
-  - name: openmotif
-    script: install_main.sh
-  - name: openmotif-doc
-    script: install_doc.sh
-    requirements:
-      - {{ pin_subpackage('openmotif', exact=True) }}
-
 about:
   home: http://motif.ics.com
   license: LGPL-2.1
@@ -82,4 +63,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - epruesse
+    - meiyasan
