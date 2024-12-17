@@ -39,6 +39,7 @@ requirements:
     - xorg-libxmu
     - xorg-makedepend
     - xorg-xproto
+    - xorg-xrender
     - libiconv
 
   run:
@@ -51,6 +52,7 @@ requirements:
     - xorg-libxp
     - xorg-libxmu
     - xorg-xproto
+    - xorg-xrender
     - libiconv
 
 test:
