@@ -31,26 +31,28 @@ requirements:
     - libpng
     - zlib
     - libjpeg-turbo
-    - "xorg-libx11>1.8"
-    - xorg-libxt
-    - xorg-libxext
-    - xorg-libxft
-    - xorg-xbitmaps
-    - xorg-libxp
-    - xorg-libxmu
-    - xorg-makedepend
+    - xorg-libx11  # [linux]
+    - xorg-libxau  # [linux]
+    - xorg-libxcursor  # [linux]
+    - xorg-libxext  # [linux]
+    - xorg-libxfixes  # [linux]
+    - xorg-libxft  # [linux]
+    - xorg-libxpm  # [linux]
+    - xorg-xorgproto # [linux]
     - libiconv
 
   run:
     - freetype
     - fontconfig
     - libpng
-    - "xorg-libx11>1.8"
-    - xorg-libxt
-    - xorg-libxext
-    - xorg-libxft
-    - xorg-libxp
-    - xorg-libxmu
+    - xorg-libx11  # [linux]
+    - xorg-libxau  # [linux]
+    - xorg-libxcursor  # [linux]
+    - xorg-libxext  # [linux]
+    - xorg-libxfixes  # [linux]
+    - xorg-libxft  # [linux]
+    - xorg-libxpm  # [linux]
+    - xorg-xorgproto # [linux]
     - libiconv
 
 test:
