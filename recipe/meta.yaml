@@ -23,8 +23,7 @@ requirements:
     - make
     - pkg-config
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-  host:
+    - {{ compiler('cxx') }}  host:
     - flex
     - freetype
     - fontconfig
@@ -48,10 +47,8 @@ requirements:
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
-    - xorg-xbitmaps
     - xorg-libxp
     - xorg-libxmu
-    - xorg-makedepend
     - xorg-xproto
     - libiconv
 
