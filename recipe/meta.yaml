@@ -31,6 +31,7 @@ requirements:
     - libpng
     - zlib
     - libjpeg-turbo
+    - "xorg-libx11>1.8"
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
@@ -44,6 +45,7 @@ requirements:
     - freetype
     - fontconfig
     - libpng
+    - "xorg-libx11>1.8"
     - xorg-libxt
     - xorg-libxext
     - xorg-libxft
