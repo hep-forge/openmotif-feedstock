@@ -20,10 +20,12 @@ source:
 
 requirements:
   build:
+    - ply
     - make
     - pkg-config
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+
   host:
     - flex
     - freetype
@@ -40,6 +42,16 @@ requirements:
     - xorg-makedepend
     - xorg-xproto
     - xorg-libxrender
+    - xorg-xextproto
+    - xorg-printproto
+    - xorg-util-macros
+    - xorg-libx11
+    - xorg-libxau
+    - xorg-kbproto
+    - xorg-libxcursor
+    - xorg-libxfixes
+    - xorg-libxpm
+    - xorg-xorgproto
     - libiconv
 
   run:
