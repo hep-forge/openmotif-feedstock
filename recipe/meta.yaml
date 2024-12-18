@@ -65,6 +65,22 @@ requirements:
     - xorg-libxmu
     - xorg-xproto
     - xorg-libxrender
+    - xorg-libxt
+    - xorg-libxext
+    - xorg-libxft
+    - xorg-xbitmaps
+    - xorg-libxp
+    - xorg-makedepend
+    - xorg-xextproto
+    - xorg-printproto
+    - xorg-util-macros
+    - xorg-libx11
+    - xorg-libxau
+    - xorg-kbproto
+    - xorg-libxcursor
+    - xorg-libxfixes
+    - xorg-libxpm
+    - xorg-xorgproto
     - libiconv
 
 test:
