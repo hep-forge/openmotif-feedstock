@@ -28,4 +28,4 @@ anaconda:
         done
 
 debug:
-	@conda debug -c hep-forge -c conda-forge -c defaults . -o openmotif-dev
+	@conda debug -c hep-forge -c conda-forge -c defaults .

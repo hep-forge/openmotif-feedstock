@@ -40,6 +40,13 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmotif-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4496&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/openmotif-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -54,8 +61,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-openmotif-green.svg)](https://anaconda.org/conda-forge/openmotif) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmotif.svg)](https://anaconda.org/conda-forge/openmotif) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmotif.svg)](https://anaconda.org/conda-forge/openmotif) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmotif.svg)](https://anaconda.org/conda-forge/openmotif) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-openmotif--dev-green.svg)](https://anaconda.org/conda-forge/openmotif-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmotif-dev.svg)](https://anaconda.org/conda-forge/openmotif-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmotif-dev.svg)](https://anaconda.org/conda-forge/openmotif-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmotif-dev.svg)](https://anaconda.org/conda-forge/openmotif-dev) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-openmotif--doc-green.svg)](https://anaconda.org/conda-forge/openmotif-doc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/openmotif-doc.svg)](https://anaconda.org/conda-forge/openmotif-doc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/openmotif-doc.svg)](https://anaconda.org/conda-forge/openmotif-doc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/openmotif-doc.svg)](https://anaconda.org/conda-forge/openmotif-doc) |
 
 Installing openmotif
 ====================
@@ -67,16 +72,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `openmotif, openmotif-dev, openmotif-doc` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `openmotif` can be installed with `conda`:
 
 ```
-conda install openmotif openmotif-dev openmotif-doc
+conda install openmotif
 ```
 
 or with `mamba`:
 
 ```
-mamba install openmotif openmotif-dev openmotif-doc
+mamba install openmotif
 ```
 
 It is possible to list all of the versions of `openmotif` available on your platform with `conda`:

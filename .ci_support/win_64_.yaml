@@ -1,0 +1,22 @@
+c_compiler:
+- vs2019
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+cxx_compiler:
+- vs2019
+fontconfig:
+- '2'
+freetype:
+- '2'
+libiconv:
+- '1'
+libjpeg_turbo:
+- '3'
+libpng:
+- '1.6'
+target_platform:
+- win-64
+zlib:
+- '1'
