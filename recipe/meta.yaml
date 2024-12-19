@@ -55,8 +55,6 @@ requirements:
     - libiconv
 
   run:
-    - freetype
-    - fontconfig
     - libpng
     - xorg-libxt
     - xorg-libxext
